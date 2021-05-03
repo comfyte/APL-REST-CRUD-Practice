@@ -1,5 +1,4 @@
 import { writeData, readData } from "../data-helpers";
-import { Karyawan } from "../data-model";
 
 /**
  * DELETE request handler
@@ -19,7 +18,7 @@ export function deleteHandler(request, response) {
     
     const existingData = readData();
  
-    const newData = existingData.filter((x) => x.id_karyawan !== request.query.empId);
+    const newData = existingData.filter(x => x.id_karyawan !== request.query.empId);
     writeData(newData);
     response.status(200).end();
 }

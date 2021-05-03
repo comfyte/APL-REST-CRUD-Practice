@@ -1,5 +1,4 @@
-import { writeData, readData } from "../data-helpers";
-import { Karyawan } from "../data-model";
+import { readData } from "../data-helpers";
 
 /**
  * GET request handler
@@ -7,5 +6,15 @@ import { Karyawan } from "../data-model";
  * @param {import("next").NextApiResponse} response 
  */
 export function getHandler(request, response) {
-    response.status(200).end();
+    if (!request.query || !request.query.empId) {
+        response.status(400).end();
+        return;
+    }
+
+    const data = readData().find(emp => emp.id_karyawan === request.query.empId);
+    if (!data) {
+        response.status(404).end();
+        return;
+    }
+    response.status(200).json(data);
 }

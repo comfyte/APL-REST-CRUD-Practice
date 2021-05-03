@@ -1,5 +1,4 @@
-import { writeData, readData } from "../data-helpers";
-import { Karyawan } from "../data-model";
+import { readData } from "../data-helpers";
 
 /**
  * GET request handler (for all employees)
@@ -7,5 +6,6 @@ import { Karyawan } from "../data-model";
  * @param {import("next").NextApiResponse} response 
  */
 export function getAllHandler(request, response) {
-    response.status(200).end();
+    const data = readData();
+    response.status(200).json(data);
 }

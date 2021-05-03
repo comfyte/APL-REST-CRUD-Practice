@@ -1,8 +1,20 @@
-/**
- * Entry point if no empId is specified in the URL
- * @param {import("next").NextApiRequest} request
- * @param {import("next").NextApiResponse} response 
- */
-export default function (request, response) {
-    response.status(200).end();
+import { getAllHandler, postHandler } from "../../../handlers";
+
+export default function (req, res) {
+    switch (req.method) {
+        // Get all entries
+        case "GET":
+            getAllHandler(req, res);
+            break;
+
+        // Create
+        case "POST":
+            postHandler(req, res);
+            break;
+
+        // Handle other unknown methods
+        default:
+            res.status(405).end();
+            break;
+    }
 }

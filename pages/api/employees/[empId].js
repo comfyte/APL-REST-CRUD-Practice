@@ -1,27 +1,25 @@
-import { putHandler } from "../../../handlers/put";
+import { getHandler, putHandler, deleteHandler } from "../../../handlers";
 
- export default function employeeApiHandler(request, response) {
-    switch (request.method) {
-        // Create
-        case "POST":
-            break;
-
+export default function (req, res) {
+    switch (req.method) {
         // Read
         case "GET":
+            getHandler(req, res);
             break;
 
         // Update
         case "PUT":
-            putHandler(request, response);
+            putHandler(req, res);
             break;
 
         // Delete
         case "DELETE":
+            deleteHandler(req, res);
             break;
 
+        // Handle other unknown methods
         default:
-            response.status(405);
-            response.end();
+            res.status(405).end();
             break;
     }
 }
