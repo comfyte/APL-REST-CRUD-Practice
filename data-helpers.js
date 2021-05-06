@@ -24,7 +24,7 @@ export function writeData(newData) {
  * Fungsi terabstraksi untuk membaca data dari file (csv)
  * @returns {Karyawan[]}
  */
-export function readData () {
+export function readData() {
     const file = fs.readFileSync(filePath, { encoding: "utf8" });
     return csv.parse(file, { columns: true });
 }

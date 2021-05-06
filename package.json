@@ -1,22 +1,25 @@
 {
   "name": "apl-rest-crud-practice",
-  "private": "true",
-  "version": "1.0.0",
-  "description": "Penugasan pembuatan REST API sederhana untuk mata kuliah Arsitektur Perangkat Lunak",
-  "main": "back-end/server.js",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/comfyte/APL-REST-CRUD-Practice.git"
-  },
   "contributors": [
     "Muhammad Farrel Rafirizqy_19/444062/TK/49258",
     "Sagara Aldavy Muhammad Noor Syams_19/444070/TK/49266"
   ],
+
+  "version": "1.0.0",
+  "private": "true",
+
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "prestart": "npm run build",
+    "start": "next start"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comfyte/APL-REST-CRUD-Practice.git"
+  },
+  
   "dependencies": {
     "csv": "^5.5.0",
     "next": "10.2.0",

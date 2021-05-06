@@ -27,5 +27,5 @@ export function postHandler(request, response) {
 
     existingData.push(new Karyawan(id_karyawan, nama, posisi));
     writeData(existingData);
-    response.status(200).end();
+    response.status(201).end();
 }
