@@ -21,7 +21,7 @@ npm start
 
 Pada kedua skenario di atas, server akan berjalan secara lokal di alamat [http://localhost:3000](http://localhost:3000).
 
-## Penggunaan (_Usage_)
+## Penggunaan (_usage_)
 
 ### Antarmuka web
 Setelah proses berjalan, buka tautan [http://localhost:3000](http://localhost:3000) di _browser_.
